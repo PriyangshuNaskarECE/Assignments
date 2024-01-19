@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+void add(int a[10][10], int b[10][10], int c[10][10], int row, int col) {
+for (int i=0; i<row; ++i) {
+for (int j=0; j<col; ++j) {
+c[i][j]=a[i][j]+b[i][j];}}}
+
+void subtr(int a[10][10], int b[10][10], int c[10][10], int row, int col) {
+for (int i=0; i<row; ++i) {
+for (int j=0; j<col; ++j) {
+c[i][j=a[i][j]-b[i][j];}}}
+
+void read(int a[10][10], int row, int col) {
+for (int i=0; i<row; ++i) {
+for (int j=0; j<col; ++j) {
+scanf("%d", &a[i][j]);}}}
+
+
+
+void prt(int a[10][10], int row, int col) {
+for (int i = 0; i < row; ++i) {
+for (int j = 0; j < col; ++j) {
+printf("%d ", a[i][j]); }
+printf("\n");}}
+    
+void main() {
+int matrix1[10][10];
+int matrix2[10][10];
+int matrixadd[10][10];
+int matrixsub[10][10];
+int row, col;
+
+printf("Enter Number of rows and columns: ");
+scanf("%d %d", &row, &col);
+printf("Enter matrix-1 elements: \n");
+read(matrix1, row, col);
+printf("Enter matrix-2 elements: \n");
+read(matrix2, row, col);
+add(matrix1, matrix2, matrixadd, row, col);
+subtr(matrix1, matrix2, matrixsub, row, col);
+printf("Matrix1 + Matrix2 = \n");
+prt(matrixadd, row, col);
+printf("Matrix1 - Matrix2 = \n");
+prt(matrixsub, row, col);
+
+}

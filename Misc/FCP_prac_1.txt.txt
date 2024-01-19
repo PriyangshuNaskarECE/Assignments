@@ -1,0 +1,31 @@
+//Set-A, Number-1
+#include <stdio.h>
+
+void swapByRef(int*a,int*b){
+ int temp=*a;
+*a=*b;
+*b=temp;
+printf("Inside Swap By Reference:a=%d,b=%d\n",*a,*b);}
+
+void swapByVal(int a,int b){
+int temp=a;
+a=b;
+b=temp;
+printf("Inside Swap By Value:a= %d,b= %d\n",a,b);
+}
+
+
+void main(){
+int x=10;
+int y=20;
+printf("Before swapping:x= %d,y= %d\n",x,y);
+
+//Call by Value
+swapByVal(x, y);
+printf("After Swap By Value:x= %d,y= %d\n",x,y);
+
+//Call by Reference
+swapByRef(&x, &y);
+printf("After Swap By Reference:x= %d,y= %d\n",x,y);
+
+}
